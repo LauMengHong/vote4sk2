@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Register - Class 4SK2 Voting</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+    <header class="header">
+        <div class="container">
+            <nav class="nav">
+                <a href="index.html" class="logo">
+                    <i class="fas fa-trophy"></i> 4SK2 Voting
+                </a>
+                <div class="nav-links">
+                    <a href="login.html" class="btn btn-secondary">
+                        <i class="fas fa-sign-in-alt"></i> Login
+                    </a>
+                </div>
+            </nav>
+        </div>
+    </header>
+
+    <main class="container" style="max-width: 500px; margin-top: 2rem;">
+        <div class="card">
+            <div style="text-align: center; margin-bottom: 2rem;">
+                <i class="fas fa-user-plus" style="font-size: 3rem; color: var(--primary); margin-bottom: 1rem;"></i>
+                <h2>Create Your Account</h2>
+                <p style="color: #6b7280;">Join the Class 4SK2 Impersonator Voting!</p>
+            </div>
+
+            <div id="alert-container"></div>
+
+            <form id="registerForm">
+                <div class="form-group">
+                    <label for="name" class="form-label">
+                        <i class="fas fa-user"></i> Full Name
+                    </label>
+                    <input type="text" id="name" name="name" class="form-input" required placeholder="Enter your full name">
+                </div>
+
+                <div class="form-group">
+                    <label for="email" class="form-label">
+                        <i class="fas fa-envelope"></i> Email Address
+                    </label>
+                    <input type="email" id="email" name="email" class="form-input" required placeholder="Enter your email">
+                </div>
+
+                <div class="form-group">
+                    <label for="password" class="form-label">
+                        <i class="fas fa-lock"></i> Password
+                    </label>
+                    <input type="password" id="password" name="password" class="form-input" required placeholder="Create a password" minlength="6">
+                    <div id="passwordStrength" style="margin-top: 0.5rem; font-size: 0.8rem;"></div>
+                </div>
+
+                <div class="form-group">
+                    <label for="confirm_password" class="form-label">
+                        <i class="fas fa-lock"></i> Confirm Password
+                    </label>
+                    <input type="password" id="confirm_password" name="confirm_password" class="form-input" required placeholder="Confirm your password">
+                </div>
+
+                <input type="hidden" id="role" name="role" value="user">
+
+                <button type="submit" class="btn btn-primary" style="width: 100%; padding: 1rem; font-size: 1.1rem;">
+                    <i class="fas fa-user-plus"></i> Create Account
+                </button>
+            </form>
+
+            <div style="text-align: center; margin-top: 2rem; padding-top: 2rem; border-top: 1px solid #e5e7eb;">
+                <p>Already have an account? 
+                    <a href="login.html" style="color: var(--primary); font-weight: bold;">Login here</a>
+                </p>
+            </div>
+        </div>
+    </main>
+
+    <script src="js/main.js"></script>
+    <script src="js/auth.js"></script>
+</body>
+</html>

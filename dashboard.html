@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Voting Dashboard - Class 4SK2</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+    <header class="header">
+        <div class="container">
+            <nav class="nav">
+                <a href="dashboard.html" class="logo">
+                    <i class="fas fa-trophy"></i> 4SK2 Voting
+                </a>
+                <div class="nav-links">
+                    <span style="color: white; margin-right: 1rem;" id="welcomeUser">
+                        <i class="fas fa-user"></i> Welcome!
+                    </span>
+                    <a href="results.html" class="btn btn-secondary">
+                        <i class="fas fa-chart-bar"></i> Results
+                    </a>
+                    <a href="index.html" class="btn btn-danger" onclick="logout()">
+                        <i class="fas fa-sign-out-alt"></i> Logout
+                    </a>
+                </div>
+            </nav>
+        </div>
+    </header>
+
+    <main class="container">
+        <div class="dashboard-stats">
+            <div class="stat-card">
+                <span class="stat-number">21</span>
+                <span class="stat-label">Contestants</span>
+            </div>
+            <div class="stat-card">
+                <span class="stat-number" id="totalVotes">0</span>
+                <span class="stat-label">Total Votes</span>
+            </div>
+            <div class="stat-card" id="votingStatus">
+                <span class="stat-number">
+                    <i class="fas fa-play"></i>
+                </span>
+                <span class="stat-label">Voting Open</span>
+            </div>
+            <div class="stat-card" id="userVoteStatus">
+                <span class="stat-number">
+                    <i class="fas fa-clock"></i>
+                </span>
+                <span class="stat-label">Not Voted</span>
+            </div>
+        </div>
+
+        <div id="alert-container"></div>
+
+        <div class="card">
+            <div style="display: flex; align-items: center; gap: 1rem; margin-bottom: 1rem;">
+                <i class="fas fa-search" style="color: var(--primary);"></i>
+                <input type="text" placeholder="Search contestants..." 
+                       onkeyup="searchCandidates(this.value)" 
+                       style="flex: 1; padding: 0.5rem; border: 1px solid #e5e7eb; border-radius: 8px;">
+            </div>
+        </div>
+
+        <div class="card-grid" id="candidatesGrid">
+            <!-- Candidates will be loaded here -->
+        </div>
+
+        <div class="card" style="background: var(--gradient); color: white; text-align: center;">
+            <h3><i class="fas fa-info-circle"></i> How to Vote</h3>
+            <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 2rem; margin-top: 2rem;">
+                <div>
+                    <i class="fas fa-eye" style="font-size: 2rem; margin-bottom: 1rem;"></i>
+                    <h4>1. Browse</h4>
+                    <p>Look through all contestants and their descriptions</p>
+                </div>
+                <div>
+                    <i class="fas fa-heart" style="font-size: 2rem; margin-bottom: 1rem;"></i>
+                    <h4>2. Choose</h4>
+                    <p>Select your favorite impersonator</p>
+                </div>
+                <div>
+                    <i class="fas fa-vote-yea" style="font-size: 2rem; margin-bottom: 1rem;"></i>
+                    <h4>3. Vote</h4>
+                    <p>Click the vote button - you can only vote once!</p>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <script src="js/main.js"></script>
+    <script src="js/voting.js"></script>
+</body>
+</html>
